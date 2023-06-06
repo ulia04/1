@@ -1,0 +1,36 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState('Witaj świecie');
+  const [counter, setCounter] = useState(0);
+
+  const handleClick = () => {
+    setMessage('Kliknięto przycisk');
+  };
+
+  const handleCounter = () => {
+    setCounter(prevCounter => prevCounter + 1);
+  };
+
+  return (
+    <div>
+      <h1>{message}</h1>
+      <button onClick={handleClick}>Kliknij mnie</button>
+      <p>Liczba kliknięć: {counter}</p>
+      <button onClick={handleCounter}>Zwiększ licznik</button>
+    </div>
+  );
+}
+
+export default App;
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
