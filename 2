@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Uliana Havrina</title>
+</head>
+<body>
+import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState('Witaj świecie');
+  const [counter, setCounter] = useState(0);
+
+  const handleClick = () => {
+    setMessage('Kliknięto przycisk');
+  };
+
+  const handleCounter = () => {
+    setCounter(prevCounter => prevCounter + 1);
+  };
+
+  return (
+    <div>
+      <h1>{message}</h1>
+      <button onClick={handleClick}>Kliknij mnie</button>
+      <p>Liczba kliknięć: {counter}</p>
+      <button onClick={handleCounter}>Zwiększ licznik</button>
+    </div>
+  );
+}
+export default App;
+    
+</body>
+</html>
